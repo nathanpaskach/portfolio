@@ -42,6 +42,7 @@ var cards = data["cards"];
 var opacity = 0;
 var fadeInInterval;
 var fadeOutInterval;
+var currentList;
 
 function fadeIn()
 {
@@ -99,6 +100,7 @@ function display(root)
 
 function displayList(list)
 {
+	currentList = list;
   container = document.getElementById('container');
 	container.innerHTML = "";
 	if(Array.isArray(list)) // Show us the subcategories
@@ -143,4 +145,13 @@ function displayList(list)
   }
 }
 
-window.onLoad = displayList(cards);
+window.addEventListener('resize', function()
+{
+  displayList(currentList);
+});
+
+document.addEventListener("readystatechange", function()
+{
+  if(document.readyState == "complete")
+	displayList(cards);
+});
