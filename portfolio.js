@@ -109,7 +109,7 @@ function displayList(list)
     w = container.offsetWidth;
     h = container.offsetHeight;
     aspect = w / h;
-    numRows = Math.ceil(Math.sqrt(len) / aspect);
+    numRows = Math.min(Math.ceil(Math.sqrt(len) / aspect), len);
     cardWidth = Math.floor(w / Math.ceil(len / numRows));
     cardHeight = Math.floor(h / numRows);
     console.log({len, aspect, numRows, cardWidth, cardHeight});
