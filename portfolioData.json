@@ -1,0 +1,40 @@
+var data = {
+  "cards": [
+    {
+      "title":"About Me",
+      "content":"My name is Nathan Paskach, and this is some placeholder text.",
+      "images":[
+        ""
+      ]
+    },
+    {
+      "title":"Projects",
+      "content":[
+        {
+          "title":"Programmer Calculator",
+          "content":"In summer of 2021 I designed and built a physical programmer calculator, and this is some placeholder text.",
+          "images":[
+            ""
+          ]
+        },
+        {
+          "title":"Go Kart",
+          "content":"For 2 weeks in Summer 2020, my girlfriend Moriah and I built a go kart from junkyard scrap metal and a Honda generator engine we had lying around.",
+          "images":[
+            ""
+          ]
+        },
+        {
+          "title":"Pocket BASIC Computer",
+          "content":"Using a Z8671 processor, lots of wires, and a microcontroller to handle the screen and keyboard, I was able to build a small computer that runs Tiny BASIC.",
+          "images":[
+            ""
+          ]
+        }
+      ],
+      "images":[
+        ""
+      ]
+    }
+  ]
+};
