@@ -22,6 +22,8 @@ h1
   width: 100%;
   flex-grow: 1;
   position: relative;
+  display: flex;
+  flex-direction: row;
 }
 
 .cardContainer
@@ -36,6 +38,17 @@ h1
   align-items: center;
 }
 
+.cardBackgroundNoGrow
+{
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Verdana";
+  font-weight: bold;
+  color: white;
+}
 .cardBackground
 {
   width: calc(100% - 10px);
@@ -59,6 +72,7 @@ h1
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: "Verdana";

@@ -1,78 +1,11 @@
-var data = {
-  "cards": [
-    {
-      "title":"About Me",
-      "content":"My name is Nathan Paskach, and this is some placeholder text.",
-      "images":[
-      ]
-    },
-    {
-      "title":"Projects",
-      "content":[
-        {
-          "title":"Boxman",
-          "content":[
-			{
-			  "title":"Box Guy",
-			  "content":"In summer of 2021 I designed and built a physical programmer calculator, and this is some placeholder text.",
-			  "images":[
-			  ]
-			},
-			{
-			  "title":"Boxman CSE",
-			  "content":"In summer of 2021 I designed and built a physical programmer calculator, and this is some placeholder text.",
-			  "images":[
-			  ]
-			},
-			{
-			  "title":"Boxman CE",
-			  "content":"In summer of 2021 I designed and built a physical programmer calculator, and this is some placeholder text.",
-			  "images":[
-			  ]
-			},
-		  ],
-          "images":[
-          ]
-        },
-        {
-          "title":"Programmer Calculator",
-          "content":"In summer of 2021 I designed and built a physical programmer calculator, and this is some placeholder text.",
-          "images":[
-          ]
-        },
-        {
-          "title":"Go Kart",
-          "content":"For 2 weeks in Summer 2020, my girlfriend Moriah and I built a go kart from junkyard scrap metal and a Honda generator engine we had lying around.",
-          "images":[
-            "images/go-kart/finished-go-kart.jpg",
-			"images/go-kart/chair-on-frame.jpg",
-			"images/go-kart/steering-wheel.jpg",
-			"images/go-kart/welding-bumper.jpg",
-			"images/go-kart/painting.jpg"
-          ]
-        },
-        {
-          "title":"Pocket BASIC Computer",
-          "content":"Using a Z8671 processor, lots of wires, and a microcontroller to handle the screen and keyboard, I was able to build a small computer that runs Tiny BASIC.",
-          "images":[
-		    "images/basic-computer/finished-computer.jpg",
-			"images/basic-computer/keyboard-matrix.jpg",
-			"images/basic-computer/logic-board.jpg",
-			"images/basic-computer/logic-board-wiring.jpg",
-			"images/basic-computer/full-wiring.jpg"
-          ]
-        }
-      ],
-      "images":[
-      ]
-    }
-  ]
-};
 var cards = data["cards"];
 var opacity = 0;
 var fadeInInterval;
 var fadeOutInterval;
 var currentList;
+var currentScroll = 0;
+var scrollTimeout = 0;
+var scrollInterval;
 
 function fadeIn()
 {
@@ -122,7 +55,7 @@ function display(root)
   	if(o['title'] == str)
     {
     	console.log(o['content']);
-    	fadeOutInterval = setInterval(fadeOut, 5, o['content']);
+    	fadeOutInterval = setInterval(fadeOut, 5, o);
     }
     else
     {
@@ -132,14 +65,27 @@ function display(root)
   });
 }
 
-function displayList(list)
+function scroll(obj, add)
 {
-	currentList = list;
+	var nowScroll = obj.scrollLeft;
+	obj.scrollLeft += add;
+	if(obj.scrollLeft == nowScroll)
+		scrollTimeout++;
+	if(scrollTimeout > 20)
+	{
+		obj.scrollLeft = 0;
+		scrollTimeout = 0;
+	}
+}
+
+function displayList(list, index)
+{
+  currentList = list;
   container = document.getElementById('container');
-	container.innerHTML = "";
-	if(Array.isArray(list)) // Show us the subcategories
+  container.innerHTML = "";
+  if(Array.isArray(list['content'])) // Show us the subcategories
   {
-  	len = list.length;
+  	len = list['content'].length;
     w = container.offsetWidth;
     h = container.offsetHeight;
     aspect = w / h;
@@ -162,17 +108,17 @@ function displayList(list)
       	var cc = temp.cloneNode(true);
         var cb = cc.children[0];
         var c = cc.children[0].children[0];
-        c.children[0].textContent = list[i]['title'];
-        c.addEventListener('click', () => display(cards));
+        c.children[0].textContent = list['content'][i]['title'];
+        c.addEventListener('click', () => display(data['content']));
 		cc.style.opacity = opacity;
         //c.style.opacity = opacity;
         //cb.style.opacity = opacity;
 		c.style.fontSize = cardHeight * 0.1 + 'px';
 		c.style.borderRadius = cardHeight * 0.05 + 'px';
 		cb.style.borderRadius = cardHeight * 0.05 + 'px';
-		if(list[i]['images'].length > 0)
+		if(list['content'][i]['images'].length > 0)
 		{
-			cb.style.backgroundImage="url(" + list[i]['images'][0] + ")";
+			cb.style.backgroundImage="url(" + list['content'][i]['images'][0] + ")";
 			cb.style.backgroundSize = 'cover';
 			cb.style.backgroundPosition = 'center';
 			c.style.backdropFilter = 'brightness(50%) blur(4px)';
@@ -186,7 +132,7 @@ function displayList(list)
         cc.style.width = cardWidth + 'px';
         cc.style.height = cardHeight + 'px';
         cc.style.display = "";
-        cc.id = list[i]["title"];
+        cc.id = list['content'][i]["title"];
         container.appendChild(cc);
         i++;
       }
@@ -195,7 +141,87 @@ function displayList(list)
   }
   else // Show us the page
   {
-  	
+  	len = 2;
+    w = container.offsetWidth;
+    h = container.offsetHeight;
+    aspect = w / h;
+    numRows = Math.min(Math.ceil(Math.sqrt(len) / aspect), len);
+	numCols = Math.ceil(len / numRows);
+	if(numCols * numRows >= len + numCols)
+		numRows -= 1;
+    cardWidth = Math.floor(w / Math.ceil(len / numRows));
+    cardHeight = Math.floor(h / numRows);
+    console.log({len, aspect, numRows, cardWidth, cardHeight});
+    
+    temp = document.getElementById('cardTemplate');
+    i = 0;
+	for(row = 0; row < numRows; row++)
+    {
+      for(col = 0; col < len / numRows; col++)
+      {
+		if(i >= len)
+        	continue;
+      	var cc = temp.cloneNode(true);
+        var cb = cc.children[0];
+		cb.className = "cardBackgroundNoGrow";
+        var c = cc.children[0].children[0];
+		if(i == 0) // We're dealing with the textbox
+		{
+			var h = document.createElement('h2');
+			h.style.fontSize = cardHeight * 0.1 + 'px';
+			h.textContent = list['title'];
+			h.style.padding = '20px';
+			var b = c.children[0].cloneNode(true);
+			b.textContent = list['content'];
+			b.style.fontSize = cardHeight * 0.05 + 'px';
+			b.style.padding = '20px';
+			b.style.marginBottom = cardHeight * 0.05 + 'px';
+			b.style.marginTop = '20px';
+			b.style.overflowY = 'auto';
+			c.innerHTML = "";
+			c.appendChild(h);
+			c.appendChild(b);
+			c.style.backgroundColor = '#aaccff';
+		}
+		else // We're dealing with the image gallery
+		{
+			c.innerHTML = "";
+			c.style.overflowX = 'auto';
+			c.style.overflowY = 'hidden';
+			c.style.flexDirection = 'row';
+			c.style.justifyContent = 'normal';
+			c.style.backgroundColor = '#000000';
+			list['images'].forEach(o =>
+			{
+				var im = document.createElement('img');
+				im.src = o;
+				im.style.height = cardHeight + 'px';
+				if(o != list['images'][list['images'].length - 1])
+					im.style.paddingRight = '10px';
+				c.appendChild(im);
+			});
+			c.scrollLeft = 0;
+			currentScroll = 0;
+			scrollInterval = setInterval(scroll, 75, c, 1);
+			c.addEventListener('mouseover', function() { clearInterval(scrollInterval); });
+		}
+		cc.style.opacity = opacity;
+        //c.style.opacity = opacity;
+        //cb.style.opacity = opacity;
+		c.style.borderRadius = cardHeight * 0.05 + 'px';
+		cb.style.borderRadius = cardHeight * 0.05 + 'px';
+	
+		cc.style.left = col * cardWidth + 'px';
+        cc.style.top = row * cardHeight + 'px';
+        cc.style.width = cardWidth + 'px';
+        cc.style.height = cardHeight + 'px';
+        cc.style.display = "";
+        // cc.id = list['content'][i]["title"];
+        container.appendChild(cc);
+        i++;
+	  }
+	}
+    fadeInInterval = setInterval(fadeIn, 5);
   }
 }
 
@@ -207,5 +233,5 @@ window.addEventListener('resize', function()
 document.addEventListener("readystatechange", function()
 {
   if(document.readyState == "complete")
-	displayList(cards);
+	displayList(data);
 });
