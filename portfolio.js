@@ -7,10 +7,12 @@ var listHistory = [];
 var currentScroll = 0;
 var scrollTimeout = 0;
 var scrollInterval;
+var transitioning = false;
 
 function fadeIn()
 {
-	if(opacity < 100)
+  transitioning = true;
+  if(opacity < 100)
   {
   	opacity += 2;
     cardContainers = document.getElementById('container').children;
@@ -24,12 +26,14 @@ function fadeIn()
   else
   {
   	clearInterval(fadeInInterval);
+	transitioning = false;
   }
 }
 
 function fadeOut(list)
 {
-	if(opacity > 0)
+  transitioning = true;
+  if(opacity > 0)
   {
   	opacity -= 2;
     cardContainers = document.getElementById('container').children;
@@ -49,13 +53,15 @@ function fadeOut(list)
 
 function display(root)
 {
+	if(transitioning)
+		return;
 	str = event.srcElement.parentNode.parentNode.id;
+	if(str.length == 0)
+		str = event.srcElement.parentNode.parentNode.parentNode.id;
 	root.forEach(o => 
   {
-  	console.log(o);
   	if(o['title'] == str)
     {
-    	console.log(o['content']);
     	fadeOutInterval = setInterval(fadeOut, 5, o);
     }
     else
@@ -68,8 +74,11 @@ function display(root)
 
 function back()
 {
-	if(listHistory.length > 0)
+	if(listHistory.length > 0 && !transitioning)
+	{
 		fadeOutInterval = setInterval(fadeOut, 5, listHistory.pop());
+		console.log(listHistory);
+	}
 }
 
 function scroll(obj, add)
@@ -102,7 +111,6 @@ function displayList(list, index)
 		numRows -= 1;
     cardWidth = Math.floor(w / Math.ceil(len / numRows));
     cardHeight = Math.floor(h / numRows);
-    console.log({len, aspect, numRows, cardWidth, cardHeight});
     
     temp = document.getElementById('cardTemplate');
     i = 0;
@@ -117,7 +125,15 @@ function displayList(list, index)
         var c = cc.children[0].children[0];
         c.children[0].textContent = list['content'][i]['title'];
 		c.children[0].style.padding = '10px';
-        c.addEventListener('click', function() { listHistory.push(currentList); display(data['content']); });
+        c.addEventListener('click', function()
+		{
+			if(!transitioning)
+			{
+				listHistory.push(currentList);
+				console.log(listHistory);
+				display(data['content']);
+			}
+		});
 		cc.style.opacity = opacity;
 		titleWords = list['content'][i]['title'].split(' ');
 		var longest = titleWords.sort(
@@ -163,7 +179,6 @@ function displayList(list, index)
 		numRows -= 1;
     cardWidth = Math.floor(w / Math.ceil(len / numRows));
     cardHeight = Math.floor(h / numRows);
-    console.log({len, aspect, numRows, cardWidth, cardHeight});
     
     temp = document.getElementById('cardTemplate');
     i = 0;
