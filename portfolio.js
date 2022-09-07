@@ -81,17 +81,23 @@ function back()
 	}
 }
 
-function scroll(obj, add)
+function scroll(obj, item)
 {
-	var nowScroll = obj.scrollLeft;
-	obj.scrollLeft += add;
-	if(obj.scrollLeft == nowScroll)
-		scrollTimeout++;
-	if(scrollTimeout > 20)
-	{
-		obj.scrollLeft = 0;
-		scrollTimeout = 0;
-	}
+	var scrollDiv = obj.children[item].offsetLeft + obj.children[item].offsetWidth / 2 - obj.offsetWidth / 2;
+	obj.scrollTo({ left: scrollDiv, behavior: 'smooth'});
+	//obj.children[item].scrollIntoView({behavior: "smooth", block: "center"});
+	setTimeout(scroll, 4000, obj, (item + 1) % obj.children.length);
+	//setTimeout(smoothScroll, 10, obj, obj.scrollLeft, obj.scrollLeftobj.children[item].offsetWidth, item);
+}
+
+function smoothScroll(obj, cur, total, item)
+{
+	newCur = cur + Math.ceil((total - cur) * 0.1);
+	obj.scrollLeft= Math.ceil((total - cur) * 0.1);
+	if(newCur < total)
+		setTimeout(smoothScroll, 10, obj, newCur, total, item);
+	else
+		setTimeout(scroll, 4000, obj, item + 1);
 }
 
 function displayList(list, index)
@@ -229,7 +235,7 @@ function displayList(list, index)
 			});
 			c.scrollLeft = 0;
 			currentScroll = 0;
-			scrollInterval = setInterval(scroll, 75, c, 1);
+			setTimeout(scroll, 4000, c, 0);
 			c.addEventListener('mouseover', function() { clearInterval(scrollInterval); });
 		}
 		cc.style.opacity = opacity;

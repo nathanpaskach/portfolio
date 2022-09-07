@@ -14,6 +14,25 @@ var data = {
           "title":"Boxman",
           "content":[
 			{
+			  "title":"Boxman Arcade",
+			  "content":"Over the course of my senior year of high school, I worked on my most ambitious implementation of Boxman I had ever undertaken. The goal for this version was to imagine what Boxman would be like of it originated in the early 1980s as its own arcade machine. \n\nI used a Super Pac-Man cabinet as the shell which I sanded and painted a nice Boxman-blue. Then I found some software I could run on the computer I put inside the cabinet that would allow it to use the original Super Pac-Man CRT as a monitor. After that it was a matter of drawing up graphics for the bezel, the control panel, and the marquee, getting those made at various sign shops, and actually writing the game to run. \n\nI finished the project 3 days before my grad party where it made its debut. It was a hit! The following winter I worked with the local arcade and got it placed there where it stood among real arcade machines for 6 months. It was pretty surreal seeing it adjacent to Super Mario Bros. and noticing how it blended right in. \n\nI consider this project a huge success and it was very fun to build!",
+			  "images":[
+				"images/boxman/arcade/finished-cabinet.jpg",
+				"images/boxman/arcade/grad-party.jpg",
+				"images/boxman/arcade/time-out-arcade-2.jpg",
+				"images/boxman/arcade/time-out-arcade-1.jpg",
+				"images/boxman/arcade/super-pac-man-1.jpg",
+				"images/boxman/arcade/super-pac-man-2.jpg",
+				"images/boxman/arcade/sanding.jpg",
+				"images/boxman/arcade/painting-1.jpg",
+				"images/boxman/arcade/painting-2.jpg",
+				"images/boxman/arcade/painting-3.jpg",
+				"images/boxman/arcade/painting-4.jpg",
+				"images/boxman/arcade/painting-5.jpg",
+				"images/boxman/arcade/monitor.jpg"
+			  ]
+			},
+			{
 			  "title":"Box Guy",
 			  "content":"In summer of 2021 I designed and built a physical programmer calculator, and this is some placeholder text.",
 			  "images":[
@@ -23,12 +42,14 @@ var data = {
 			  "title":"Boxman CSE",
 			  "content":"In summer of 2021 I designed and built a physical programmer calculator, and this is some placeholder text.",
 			  "images":[
+				"images/boxman/cse/gameplay.gif"
 			  ]
 			},
 			{
 			  "title":"Boxman CE",
 			  "content":"In summer of 2021 I designed and built a physical programmer calculator, and this is some placeholder text.",
 			  "images":[
+				"images/boxman/ce/gameplay.gif"
 			  ]
 			},
 		  ],
