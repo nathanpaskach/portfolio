@@ -8,13 +8,35 @@ body
 
 h1
 {
-  font-size: 5vw;
+  font-size: 5vmin;
+  width: 100%;
+  text-align: center;
 }
 
 .title
 {
   text-align: center;
   font-family: "Verdana";
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.backButton
+{
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #aaccff;
+  color: white;
+  font-weight: bold;
+  font-size: 5vh;
+  height: 5vh;
+  width: 5vh;
+  position: absolute;
+  left: 12px;
 }
 
 .container

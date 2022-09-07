@@ -3,6 +3,7 @@ var opacity = 0;
 var fadeInInterval;
 var fadeOutInterval;
 var currentList;
+var listHistory = [];
 var currentScroll = 0;
 var scrollTimeout = 0;
 var scrollInterval;
@@ -65,6 +66,12 @@ function display(root)
   });
 }
 
+function back()
+{
+	if(listHistory.length > 0)
+		fadeOutInterval = setInterval(fadeOut, 5, listHistory.pop());
+}
+
 function scroll(obj, add)
 {
 	var nowScroll = obj.scrollLeft;
@@ -109,11 +116,16 @@ function displayList(list, index)
         var cb = cc.children[0];
         var c = cc.children[0].children[0];
         c.children[0].textContent = list['content'][i]['title'];
-        c.addEventListener('click', () => display(data['content']));
+		c.children[0].style.padding = '10px';
+        c.addEventListener('click', function() { listHistory.push(currentList); display(data['content']); });
 		cc.style.opacity = opacity;
-        //c.style.opacity = opacity;
-        //cb.style.opacity = opacity;
-		c.style.fontSize = cardHeight * 0.1 + 'px';
+		titleWords = list['content'][i]['title'].split(' ');
+		var longest = titleWords.sort(
+			function (a, b) {
+				return b.length - a.length;
+			}
+		)[0];
+		c.style.fontSize = Math.min(cardHeight * 0.1, cardWidth / longest.length) + 'px';
 		c.style.borderRadius = cardHeight * 0.05 + 'px';
 		cb.style.borderRadius = cardHeight * 0.05 + 'px';
 		if(list['content'][i]['images'].length > 0)
