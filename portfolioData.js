@@ -58,13 +58,15 @@ var data = {
         },
         {
           "title":"Programmer Calculator",
-          "content":"In summer of 2021 I designed and built a physical programmer calculator, and this is some placeholder text.",
+          "content":"In summer of 2021 I designed and built a physical programmer calculator. \n\nIt is a custom PCB surrounded by a 3D printed ABS case with 3D printed buttons (don't even ask how many button iterations I went through) each with a drawn-on label. The screen is 16 7-segment displays, 8 for the top row and 8 for the bottom row to display 2 32 bit numbers, and 64 individual red LEDs to display the binary representation of the same 2 32 bit numbers. The brain is an ATMEGA 128 because I wanted the extra IO for the button matrix and keypad LEDs.\n\nIt can display and receive numbers in decimal, binary, and hex, as well as doing all the necessary integer operations and bitwise operations. The calculator operates using Reverse Polish Notation. The two numbers displayed are the two top numbers on the stack (the bottom number is the top of the stack.) Single operand operations such as bit shifting, 2^x, 1's and 2's compliment are done on the number on the top of the stack.\n\nIt measures 3.05\" x 4.7\" x 0.6\". I heavily based its looks off of old Commodore calculators with red LED screens and colorful buttons.\n\nThis was a fun project to build, and has come in handy more than a few times for me.",
           "images":[
+			"images/programmer-calculator/finished-calculator.jpeg",
+			"images/programmer-calculator/finished-case.jpg"
           ]
         },
         {
           "title":"Go Kart",
-          "content":"For 2 weeks in Summer 2020, my girlfriend Moriah and I built a go kart from junkyard scrap metal and a Honda generator engine we had lying around.",
+          "content":"For 2 weeks in Summer 2020, my girlfriend Moriah and I built a go kart.\n\nThe frame we made from various steel tubes we picked up from the junkyard that we cut and welded together. The engine is an 8HP Honda engine that we had in our garage that wasn't being used for anything. We built the seat out of 3/16\" plywood, upholstery foam, and faux leather.\n\nFrom the few times we've driven it around, it has held up very well! With a top speed of just over 40MPH, it is an absolute blast to drive.",
           "images":[
             "images/go-kart/finished-go-kart.jpg",
 			"images/go-kart/chair-on-frame.jpg",
