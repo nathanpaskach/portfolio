@@ -66,18 +66,23 @@ var data = {
         },
         {
           "title":"Go Kart",
-          "content":"For 2 weeks in Summer 2020, my girlfriend Moriah and I built a go kart.\n\nThe frame we made from various steel tubes we picked up from the junkyard that we cut and welded together. The engine is an 8HP Honda engine that we had in our garage that wasn't being used for anything. We built the seat out of 3/16\" plywood, upholstery foam, and faux leather.\n\nFrom the few times we've driven it around, it has held up very well! With a top speed of just over 40MPH, it is an absolute blast to drive.",
+          "content":"For 2 weeks in Summer 2020, my girlfriend Moriah and I built a go kart.\n\nThe frame we made from various steel tubes we picked up from the junkyard that we cut and welded together. The engine is an 8HP Honda engine that we had in our garage that wasn't being used for anything. We built the seat out of 3/16\" plywood, upholstery foam, and faux leather. We bought the wheels, pedals, and steering wheel from an online go kart supply store since we couldn't make those ourselves.\n\nFrom the few times we've driven it around, it has held up very well! With a top speed of just over 40MPH, it is an absolute blast to drive.",
           "images":[
             "images/go-kart/finished-go-kart.jpg",
+			"images/go-kart/ryan-zooming-past.gif",
 			"images/go-kart/chair-on-frame.jpg",
+			"images/go-kart/steering-wheel-check.jpg",
+			"images/go-kart/moriah-fit-check.jpg",
 			"images/go-kart/steering-wheel.jpg",
 			"images/go-kart/welding-bumper.jpg",
+			"images/go-kart/full-frame.jpg",
+			"images/go-kart/priming.jpg",
 			"images/go-kart/painting.jpg"
           ]
         },
         {
           "title":"Pocket BASIC Computer",
-          "content":"Using a Z8671 processor, lots of wires, and a microcontroller to handle the screen and keyboard, I was able to build a small computer that runs Tiny BASIC.",
+          "content":"During the winter of 2019-2020, using a Z8671 processor and a microcontroller as a stand-in \"terminal\", I built small computer that runs Tiny BASIC.\n\nI based the design off of the \"Seven Chip Computer\" in the Z8671's application notes. The part of the terminal is played by an ATMEGA328 microcontroller that reads the keyboard matrix and sends the characters to the Z8671 over UART, and reads the output from the Z8671 and displays it to the screen. The keyboard and the case are 3D printed, and the key labels are tiny vinyl decals sealed in Mod Podge.\n\nI enjoyed solving the unique problems this project posed. The 3D printed miniature keyboard was one of the harder problems to solve, forcing me to precisely characterize my 3D printer's tolerances and design around them. Another problem I had never had to solve before was where to find the obscure, obsolete QSRAM sister chip for the Z8671. I ended up lucking out and finding one on e-Bay that worked. All in all, it was a fun project that taught me many new design skills and made me solve new and interesting problems.",
           "images":[
 		    "images/basic-computer/finished-computer.jpg",
 			"images/basic-computer/keyboard-matrix.jpg",
