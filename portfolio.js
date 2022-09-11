@@ -15,7 +15,7 @@ function fadeIn()
   if(opacity < 100)
   {
   	opacity += 2;
-    cardContainers = document.getElementById('container').children;
+    var cardContainers = document.getElementById('container').children;
     for(i = 0; i < cardContainers.length; i++)
     {
 		cardContainers[i].style.opacity = opacity / 100;
@@ -36,7 +36,7 @@ function fadeOut(list)
   if(opacity > 0)
   {
   	opacity -= 2;
-    cardContainers = document.getElementById('container').children;
+    var cardContainers = document.getElementById('container').children;
     for(i = 0; i < cardContainers.length; i++)
     {
 		cardContainers[i].style.opacity = opacity / 100;
@@ -55,7 +55,7 @@ function display(root)
 {
 	if(transitioning)
 		return;
-	str = event.srcElement.parentNode.parentNode.id;
+	var str = event.srcElement.parentNode.parentNode.id;
 	if(str.length == 0)
 		str = event.srcElement.parentNode.parentNode.parentNode.id;
 	root.forEach(o => 
@@ -92,7 +92,7 @@ function scroll(obj, item)
 
 function smoothScroll(obj, cur, total, item)
 {
-	newCur = cur + Math.ceil((total - cur) * 0.1);
+	var newCur = cur + Math.ceil((total - cur) * 0.1);
 	obj.scrollLeft= Math.ceil((total - cur) * 0.1);
 	if(newCur < total)
 		setTimeout(smoothScroll, 10, obj, newCur, total, item);
@@ -103,23 +103,23 @@ function smoothScroll(obj, cur, total, item)
 function displayList(list, index)
 {
   currentList = list;
-  container = document.getElementById('container');
+  var container = document.getElementById('container');
   container.innerHTML = "";
   if(Array.isArray(list['content'])) // Show us the subcategories
   {
-  	len = list['content'].length;
-    w = container.offsetWidth;
-    h = container.offsetHeight;
-    aspect = w / h;
-    numRows = Math.min(Math.ceil(Math.sqrt(len) / aspect), len);
-	numCols = Math.ceil(len / numRows);
+  	var len = list['content'].length;
+    var w = container.offsetWidth;
+    var h = container.offsetHeight;
+    var aspect = w / h;
+    var numRows = Math.min(Math.ceil(Math.sqrt(len) / aspect), len);
+	var numCols = Math.ceil(len / numRows);
 	if(numCols * numRows >= len + numCols)
 		numRows -= 1;
-    cardWidth = Math.floor(w / Math.ceil(len / numRows));
-    cardHeight = Math.floor(h / numRows);
+    var cardWidth = Math.floor(w / Math.ceil(len / numRows));
+    var cardHeight = Math.floor(h / numRows);
     
-    temp = document.getElementById('cardTemplate');
-    i = 0;
+    var temp = document.getElementById('cardTemplate');
+    var i = 0;
     for(row = 0; row < numRows; row++)
     {
     	for(col = 0; col < len / numRows; col++)
@@ -141,7 +141,7 @@ function displayList(list, index)
 			}
 		});
 		cc.style.opacity = opacity;
-		titleWords = list['content'][i]['title'].split(' ');
+		var titleWords = list['content'][i]['title'].split(' ');
 		var longest = titleWords.sort(
 			function (a, b) {
 				return b.length - a.length;
@@ -175,19 +175,19 @@ function displayList(list, index)
   }
   else // Show us the page
   {
-  	len = 2;
-    w = container.offsetWidth;
-    h = container.offsetHeight;
-    aspect = w / h;
-    numRows = Math.min(Math.ceil(Math.sqrt(len) / aspect), len);
-	numCols = Math.ceil(len / numRows);
+  	var len = 2;
+    var w = container.offsetWidth;
+    var h = container.offsetHeight;
+    var aspect = w / h;
+    var numRows = Math.min(Math.ceil(Math.sqrt(len) / aspect), len);
+	var numCols = Math.ceil(len / numRows);
 	if(numCols * numRows >= len + numCols)
 		numRows -= 1;
-    cardWidth = Math.floor(w / Math.ceil(len / numRows));
-    cardHeight = Math.floor(h / numRows);
+    var cardWidth = Math.floor(w / Math.ceil(len / numRows));
+    var cardHeight = Math.floor(h / numRows);
     
-    temp = document.getElementById('cardTemplate');
-    i = 0;
+    var temp = document.getElementById('cardTemplate');
+    var i = 0;
 	for(row = 0; row < numRows; row++)
     {
       for(col = 0; col < len / numRows; col++)
