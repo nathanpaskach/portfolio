@@ -98,14 +98,6 @@ var data = {
           ]
         },
         {
-          "title":"Programmer Calculator",
-          "content":"In summer of 2021 I designed and built a physical programmer calculator. \n\nIt is a custom PCB surrounded by a 3D printed ABS case with 3D printed buttons (don't even ask how many button iterations I went through) each with a drawn-on label. The screen is 16 7-segment displays, 8 for the top row and 8 for the bottom row to display 2 32 bit numbers, and 64 individual red LEDs to display the binary representation of the same 2 32 bit numbers. The brain is an ATMEGA 128 because I wanted the extra IO for the button matrix and keypad LEDs.\n\nIt can display and receive numbers in decimal, binary, and hex, as well as doing all the necessary integer operations and bitwise operations. The calculator operates using Reverse Polish Notation. The two numbers displayed are the two top numbers on the stack (the bottom number is the top of the stack.) Single operand operations such as bit shifting, 2^x, 1's and 2's compliment are done on the number on the top of the stack.\n\nIt measures 3.05\" x 4.7\" x 0.6\". I heavily based its looks off of old Commodore calculators with red LED screens and colorful buttons.\n\nThis was a fun project to build, and has come in handy more than a few times for me.",
-          "images":[
-			"images/programmer-calculator/finished-calculator.jpeg",
-			"images/programmer-calculator/finished-case.jpg"
-          ]
-        },
-        {
           "title":"Go Kart",
           "content":"For 2 weeks in Summer 2020, my girlfriend Moriah and I built a go kart.\n\nThe frame we made from various steel tubes we picked up from the junkyard that we cut and welded together. The engine is an 8HP Honda engine that we had in our garage that wasn't being used for anything. We built the seat out of 3/16\" plywood, upholstery foam, and faux leather. We bought the wheels, pedals, and steering wheel from an online go kart supply store since we couldn't make those ourselves.\n\nFrom the few times we've driven it around, it has held up very well! With a top speed of just over 40MPH, it is an absolute blast to drive.",
           "images":[
@@ -122,6 +114,15 @@ var data = {
           ]
         },
         {
+          "title":"\"Lead\" Zeppelin",
+          "content":"",
+          "images":[
+            "images/lead-zeppelin/flying-1.jpg",
+            "images/lead-zeppelin/flying.gif",
+            "images/lead-zeppelin/pcb-1.jpg"
+          ]
+        },
+        {
           "title":"Pocket BASIC Computer",
           "content":"During the winter of 2019-2020, using a Z8671 processor and a microcontroller as a stand-in \"terminal\", I built small computer that runs Tiny BASIC.\n\nI based the design off of the \"Seven Chip Computer\" in the Z8671's application notes. The part of the terminal is played by an ATMEGA328 microcontroller that reads the keyboard matrix and sends the characters to the Z8671 over UART, and reads the output from the Z8671 and displays it to the screen. The keyboard and the case are 3D printed, and the key labels are tiny vinyl decals sealed in Mod Podge.\n\nI enjoyed solving the unique problems this project posed. The 3D printed miniature keyboard was one of the harder problems to solve, forcing me to precisely characterize my 3D printer's tolerances and design around them. Another problem I had never had to solve before was where to find the obscure, obsolete QSRAM sister chip for the Z8671. I ended up lucking out and finding one on e-Bay that worked. All in all, it was a fun project that taught me many new design skills and made me solve new and interesting problems.",
           "images":[
@@ -130,6 +131,43 @@ var data = {
 			"images/basic-computer/logic-board.jpg",
 			"images/basic-computer/logic-board-wiring.jpg",
 			"images/basic-computer/full-wiring.jpg"
+          ]
+        },
+        {
+          "title":"Programmer Calculator",
+          "content":"In summer of 2021 I designed and built a physical programmer calculator. \n\nIt is a custom PCB surrounded by a 3D printed ABS case with 3D printed buttons (don't even ask how many button iterations I went through) each with a drawn-on label. The screen is 16 7-segment displays, 8 for the top row and 8 for the bottom row to display 2 32 bit numbers, and 64 individual red LEDs to display the binary representation of the same 2 32 bit numbers. The brain is an ATMEGA 128 because I wanted the extra IO for the button matrix and keypad LEDs.\n\nIt can display and receive numbers in decimal, binary, and hex, as well as doing all the necessary integer operations and bitwise operations. The calculator operates using Reverse Polish Notation. The two numbers displayed are the two top numbers on the stack (the bottom number is the top of the stack.) Single operand operations such as bit shifting, 2^x, 1's and 2's compliment are done on the number on the top of the stack.\n\nIt measures 3.05\" x 4.7\" x 0.6\". I heavily based its looks off of old Commodore calculators with red LED screens and colorful buttons.\n\nThis was a fun project to build, and has come in handy more than a few times for me.",
+          "images":[
+			"images/programmer-calculator/finished-calculator.jpeg",
+			"images/programmer-calculator/finished-case.jpg"
+          ]
+        },
+        {
+          "title":"SCI Bots",
+          "content":"",
+          "images":[
+			"images/sci-bots/glamour.jpg",
+			"images/sci-bots/driving-1.gif",
+			"images/sci-bots/driving-2.gif",
+			"images/sci-bots/sci-2018.jpg",
+			"images/sci-bots/cad-1.jpg",
+			"images/sci-bots/beam-break.jpg",
+			"images/sci-bots/wood-proto.jpg",
+			"images/sci-bots/wood-proto-wiring.jpg",
+			"images/sci-bots/building-1.jpg",
+			"images/sci-bots/building-2.jpg",
+			"images/sci-bots/building-3.jpg",
+			"images/sci-bots/building-4.jpg",
+			"images/sci-bots/building-5.jpg",
+			"images/sci-bots/building-6.jpg",
+			"images/sci-bots/installing-1.jpg",
+			"images/sci-bots/installing-2.jpg",
+			"images/sci-bots/new-board.jpg",
+			"images/sci-bots/assembly-1.jpg",
+			"images/sci-bots/assembly-2.jpg",
+			"images/sci-bots/new-install-1.jpg",
+			"images/sci-bots/charging-pad.jpg",
+			"images/sci-bots/new-install-2.jpg",
+			"images/sci-bots/new-install-3.jpg",
           ]
         }
       ],

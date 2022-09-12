@@ -7,6 +7,8 @@ var listHistory = [];
 var currentScroll = 0;
 var scrollTimeout = 0;
 var scrollInterval;
+var scrollObj;
+var oldScrollPos = 0;
 var transitioning = false;
 
 function fadeIn()
@@ -77,27 +79,28 @@ function back()
 	if(listHistory.length > 0 && !transitioning)
 	{
 		fadeOutInterval = setInterval(fadeOut, 5, listHistory.pop());
-		console.log(listHistory);
 	}
+}
+
+function detectScroll(e) {
+	clearTimeout(scrollTimeout);
+	scrollTimeout = setTimeout(function() {
+		oldScrollPos = scrollObj.scrollLeft;
+		scrollObj.removeEventListener('scroll', detectScroll);
+	}, 100);
 }
 
 function scroll(obj, item)
 {
-	var scrollDiv = obj.children[item].offsetLeft + obj.children[item].offsetWidth / 2 - obj.offsetWidth / 2;
-	obj.scrollTo({ left: scrollDiv, behavior: 'smooth'});
-	//obj.children[item].scrollIntoView({behavior: "smooth", block: "center"});
-	setTimeout(scroll, 4000, obj, (item + 1) % obj.children.length);
-	//setTimeout(smoothScroll, 10, obj, obj.scrollLeft, obj.scrollLeftobj.children[item].offsetWidth, item);
-}
-
-function smoothScroll(obj, cur, total, item)
-{
-	var newCur = cur + Math.ceil((total - cur) * 0.1);
-	obj.scrollLeft= Math.ceil((total - cur) * 0.1);
-	if(newCur < total)
-		setTimeout(smoothScroll, 10, obj, newCur, total, item);
-	else
-		setTimeout(scroll, 4000, obj, item + 1);
+	scrollObj = obj;
+	if(oldScrollPos == obj.scrollLeft)
+	{
+		var scrollDiv = obj.children[item].offsetLeft + obj.children[item].offsetWidth / 2 - obj.offsetWidth / 2;
+		obj.scrollTo({ left: scrollDiv, behavior: 'smooth'});
+		
+		scrollObj.addEventListener('scroll', detectScroll);
+		scrollInterval = setTimeout(scroll, 4000, obj, (item + 1) % obj.children.length);
+	}
 }
 
 function displayList(list, index)
@@ -136,7 +139,6 @@ function displayList(list, index)
 			if(!transitioning)
 			{
 				listHistory.push(currentList);
-				console.log(listHistory);
 				display(data['content']);
 			}
 		});
@@ -235,8 +237,7 @@ function displayList(list, index)
 			});
 			c.scrollLeft = 0;
 			currentScroll = 0;
-			setTimeout(scroll, 4000, c, 0);
-			c.addEventListener('mouseover', function() { clearInterval(scrollInterval); });
+			scrollInterval = setTimeout(scroll, 10, c, 0);
 		}
 		cc.style.opacity = opacity;
         //c.style.opacity = opacity;
