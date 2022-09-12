@@ -79,6 +79,8 @@ function back()
 	if(listHistory.length > 0 && !transitioning)
 	{
 		fadeOutInterval = setInterval(fadeOut, 5, listHistory.pop());
+		oldScrollPos = 0;
+		scrollObj = null;
 	}
 }
 
