@@ -44,52 +44,56 @@ var data = {
 			  "title":"Boxman VIC-20",
 			  "content":"In 2017, I bought a Commodore VIC-20 off of craigslist, and I wanted to write Boxman for it in CBM BASIC. I knew that the slow speed of the 6502 processor combined with the slow speed of BASIC would force me to seriously optimize the code for drawing the screen, so it would be a good challenge. I also wanted to make the game less luck-based than it was previously, so in this version, you can nudge the box left or right as it's falling to allow the player to strategically build up towers or slopes. Also new in this version was that when you complete a row of boxes on the bottom, the screen would shift up (sort of like Tetris) so the player could keep playing as long as they didn't get squished by a falling box. As for the screen drawing routine, I knew it had to do as little as possible per loop of the game, so it only draws things that have changed on the screen and leaves everything else alone since the screen memory is persistent. ",
 			  "images":[
+				"images/boxman/vic-20/gameplay.gif"
 			  ]
 			},
 			{
 			  "title":"Boxman Standalone",
 			  "content":"Inspired by small handheld games like the old McDonald's toys, I wanted to make a standalone Boxman game with a screen, a speaker, and two buttons.\n\nI used the case of an old power transformer as the enclosure that I cut a window into for a small TFT screen and two holes for buttons from a broken SNES controller. Inside the enclosure is an Arduino Nano that I programed to use the screen and the two buttons as the player's interface for Boxman. I was getting really good at writing Boxman implementations at this point, but I wanted this version to have music like two of the previous versions. This meant including a speaker in the enclosure and writing some code to play through a song at the same time as running the game. With the limited memory of the Arduino Nano, it was hard to fit the whole song on the chip, but with some compromises I was able to do it. ",
 			  "images":[
-				"images/boxman/standalone/gameplay-1.jpg"
+				"images/boxman/standalone/gameplay.gif"
 			  ]
 			},
 			{
 			  "title":"Boxman CE",
 			  "content":"With the release of a new calculator in the TI-84 series in 2015, the TI-84 Plus CE, in 2017 I set out to program a new Boxman for this new calculator.\n\nA community member had developed a C compiler for this new calculator, so I decided I would use that to program this version. I knew some C but I had never done anything this complicated before. The trickiest bit was getting all the sprites encoded into memory for use with the toolchain's sprite drawing functions. By this time I was getting pretty comfortable writing the basic structure of a Boxman game, so I was able to spend more time polishing the look and feel of the game. This version features little machines at the top of the screen that slowly drop out boxes which I threw in to disambiguate where the boxes actually come from. It also features a title screen when you start up the game that explains the rules before you start playing.\n\nI uploaded the program to an online calculator enthusiast forum's program archives pages, and as of writing, Boxman CE has over 6700 downloads.",
 			  "images":[
-				"images/boxman/ce/gameplay.gif"
+				"images/boxman/ce/gameplay-1.gif"
 			  ]
 			},
 			{
 			  "title":"Boxman Blender",
 			  "content":"In 2016, I wanted to write a version of Boxman for computers, but not use Scratch. I had been learning Blender3D for a couple years and I knew it had a game engine built in to it, so I decided to create Boxman in the Blender Game Engine to learn its ins and outs. This was all new to me. I had never had to worry about 3D modeling or applying the right kind of collision physics to something before. Before long, though, by using the physics engine to handle the boxes falling, and a bit of python for moving the player around, I got a working version of Boxman running on my school computer as a standalone application.",
 			  "images":[
+				"images/boxman/blender/gameplay.gif"
 			  ]
 			},
 			{
 			  "title":"Boxman Monochrome",
 			  "content":"In 2015, I set out to bring Boxman to the earlier TI-84 and TI-83 series of calculators. I was able to reuse most of the code except for the sprite drawing routines. This was a bit too easy though, so I implemented a feature unique to this version which was that you could break boxes in stacks that you couldn't climb. It would take a little while in game time to do so, but in a pinch it would allow you to escape from certain death. This version of Boxman was also the first to have multiple levels. Once you get to the top of the screen once, the screen resets and you start again from the bottom with the boxes falling faster.",
 			  "images":[
-				"images/boxman/monochrome/gameplay.gif"
+				"images/boxman/monochrome/gameplay-1.gif"
 			  ]
 			},
 			{
 			  "title":"Box Man 2",
 			  "content":"In 2014, I wanted to come back to the original version of Boxman, Box Guy, and re-write it in Scratch without my \"one class period\" time limit. A new feature in this version was a warning for each box telling you where it was going to fall.",
 			  "images":[
+				"images/boxman/scratch-2/gameplay.gif"
 			  ]
 			},
 			{
 			  "title":"Boxman CSE",
 			  "content":"Excited by the completion of Box Guy, I wanted to re-write the game for my graphing calculator I had just gotten for my algebra class, a TI-84 Plus C Silver Edition. I had never written a game that complex for a calculator yet, so I had to learn a lot about displaying graphics on the screen, writing a game loop with all the functionality, how to optimize it to run at a playable speed with the limitations of the calculator, etc. I found a community developed graphics library for the TI-84 PCSE which I used to draw the squares and the score at the top of the screen. I finished the game in 2013. In 2014, after learning a bit more about the graphics library I was using and having gained more knowledge about code optimization for the calculator, I updated this version with better graphics and got it to run almost twice as fast.",
 			  "images":[
-				"images/boxman/cse/gameplay.gif"
+				"images/boxman/cse/gameplay-1.gif"
 			  ]
 			},
 			{
 			  "title":"Box Guy",
 			  "content":"In my 7th grade year of school, I wanted to see if I could write a fully playable game from start to finish during my english class period. The computer lab computers had Scratch installed to them, so I started it up and tried to think of a simple game that I could program.\n\nI didn't want to spend any time on drawing sprites, so I just made the player a green square. The simplest goal I could think of was to get from the bottom of the screen to the top, and the player would have to climb up more squares to get there. Where do these squares come from? Well the easiest thing I thought would be for them to just fall from the top of the screen. So, there it was. The player climbing up falling squares. They win if they get to the top and they lose if a square falls on the player. I came up with the title \"Box Guy\" since the whole game was just about a guy who climbs boxes.\n\nI managed to get the game working by the end of the period which was very satisfying. I showed it to my friends and we all had fun trying to beat it. It was surprisingly challenging!",
 			  "images":[
+				"images/boxman/box-guy/gameplay.gif"
 			  ]
 			},
 		  ],
