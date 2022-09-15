@@ -236,12 +236,14 @@ function displayList(list, index)
 				im.onload = function() {
 					if(this.width / this.height > cardWidth / cardHeight)
 					{
-						im.style.height = '';
-						im.style.width = cardWidth + 'px';
+						im.style.height = cardWidth / this.width * this.height + 'px';
+						//im.style.width = cardWidth + 'px';
 					}
 				}
 				if(o != list['images'][list['images'].length - 1])
 					im.style.paddingRight = '10px';
+				if(o != list['images'][0])
+					im.style.paddingLeft = '10px';
 				c.appendChild(im);
 			});
 			c.scrollLeft = 0;
