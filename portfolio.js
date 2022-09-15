@@ -233,6 +233,13 @@ function displayList(list, index)
 				var im = document.createElement('img');
 				im.src = o;
 				im.style.height = cardHeight + 'px';
+				im.onload = function() {
+					if(this.width / this.height > cardWidth / cardHeight)
+					{
+						im.style.height = '';
+						im.style.width = cardWidth + 'px';
+					}
+				}
 				if(o != list['images'][list['images'].length - 1])
 					im.style.paddingRight = '10px';
 				c.appendChild(im);
