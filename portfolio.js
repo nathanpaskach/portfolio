@@ -3,13 +3,13 @@ var opacity = 0;
 var fadeInInterval;
 var fadeOutInterval;
 var currentList;
-var listHistory = [];
 var currentScroll = 0;
 var scrollTimeout = 0;
 var scrollInterval;
 var scrollObj;
 var oldScrollPos = 0;
 var transitioning = false;
+var clickedObject = null;
 
 function fadeIn()
 {
@@ -35,6 +35,7 @@ function fadeIn()
 function fadeOut(list)
 {
   transitioning = true;
+  clickedObject = list['title'];
   if(opacity > 0)
   {
   	opacity -= 2;
@@ -60,28 +61,37 @@ function display(root)
 	var str = event.srcElement.parentNode.parentNode.id;
 	if(str.length == 0)
 		str = event.srcElement.parentNode.parentNode.parentNode.id;
+	clickedObject = str;
 	root.forEach(o => 
-  {
-  	if(o['title'] == str)
-    {
-    	fadeOutInterval = setInterval(fadeOut, 5, o);
-    }
-    else
-    {
-    	if(Array.isArray(o['content']))
-	    	display(o['content']);
-    }
-  });
+	{
+		if(o['title'] == str)
+		{
+			fadeOutInterval = setInterval(fadeOut, 5, o);
+		}
+		else
+		{
+			if(Array.isArray(o['content']))
+				display(o['content']);
+		}
+	});
 }
 
 function back()
 {
-	if(listHistory.length > 0 && !transitioning)
+	if(!transitioning)
 	{
-		fadeOutInterval = setInterval(fadeOut, 5, listHistory.pop());
-		oldScrollPos = 0;
-		scrollObj = null;
+		obj = findParentOfItem(data, currentList['title']);
+		if(obj != '')
+			window.location.href = '#' + obj['title'];
+		// backAnimate(obj);
 	}
+}
+
+function backAnimate(obj)
+{
+	fadeOutInterval = setInterval(fadeOut, 5, obj);
+	oldScrollPos = 0;
+	scrollObj = null;
 }
 
 function detectScroll(e) {
@@ -140,8 +150,8 @@ function displayList(list, index)
 		{
 			if(!transitioning)
 			{
-				listHistory.push(currentList);
 				display(data['content']);
+				window.location.href = '#' + this.textContent.trim();
 			}
 		});
 		cc.style.opacity = opacity;
@@ -180,6 +190,8 @@ function displayList(list, index)
   else // Show us the page
   {
   	var len = 2;
+	if(list['images'].length == 0)
+	  len = 1;
     var w = container.offsetWidth;
     var h = container.offsetHeight;
     var aspect = w / h;
@@ -270,6 +282,41 @@ function displayList(list, index)
   }
 }
 
+function findItem(root, title)
+{
+	if(root['title'] == title)
+		return root;
+	if(Array.isArray(root['content']))
+	{
+		for(var i = 0; i < root['content'].length; i++)
+		{
+			foundItem = findItem(root['content'][i], title)
+			if(foundItem != '')
+				return foundItem;
+		}
+	}
+	return '';
+}
+
+function findParentOfItem(root, title)
+{
+	if(Array.isArray(root['content']))
+	{
+		for(var i = 0; i < root['content'].length; i++)
+		{
+			if(root['content'][i]['title'] == title)
+				return root
+		}
+		for(var i = 0; i < root['content'].length; i++)
+		{
+			foundItem = findParentOfItem(root['content'][i], title)
+			if(foundItem != '')
+				return foundItem;
+		}
+	}
+	return '';
+}
+
 window.addEventListener('resize', function()
 {
   displayList(currentList);
@@ -278,5 +325,34 @@ window.addEventListener('resize', function()
 document.addEventListener("readystatechange", function()
 {
   if(document.readyState == "complete")
-	displayList(data);
+  {
+	if(window.location.hash.substr(1) == '')
+		window.location.href = '#Home';
+	else
+	{
+		console.log(decodeURI(window.location.hash.substr(1)));
+		console.log(findItem(data, decodeURI(window.location.hash.substr(1))));
+		var s = findItem(data, decodeURI(window.location.hash.substr(1)));
+		if(s != '')
+			displayList(s);
+		else
+			window.location.href = '#Home';
+	}
+  }
 });
+
+window.addEventListener('hashchange',() => {
+	if(decodeURI(window.location.hash.substr(1)) == '')
+	{
+		window.location.href = '#Home';
+		return;
+	}
+	if(transitioning)
+	{
+		window.location.href = '#' + clickedObject;
+	}
+	if(decodeURI(window.location.hash.substr(1)) != clickedObject)
+	{
+		backAnimate(findItem(data, decodeURI(window.location.hash.substr(1))));
+	}
+})

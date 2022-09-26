@@ -1,5 +1,5 @@
 var data = {
-  "title":"root",
+  "title":"Home",
   "content": [
     {
       "title":"About Me",
@@ -119,9 +119,17 @@ var data = {
           ]
         },
         {
+          "title":"Con-sea-erge",
+          "content":"Senior design project: Fish tank status monitor/auto feeder",
+          "images":[
+		    "images/con-sea-erge/stock-fish.jpg"
+          ]
+        },
+        {
           "title":"\"Lead\" Zeppelin",
           "content":"In Spring 2019 in CprE 186, three classmates and I built a remote control blimp that we called the \"Lead\" Zeppelin (a play on Led Zeppelin; \"lead\" because we used leaded solder, and zeppelin is another word for blimp.) It was a custom PCB with a microcontroller, 2 dual H-bridge chips for controlling 4 DC motors, mounting points for the 4 motors, and an RC receiver. The RC receiver generates PWM signals indicating the state of the controller. We used the microcontroller to read in the PWM signals and talk to the motor controllers to spin the motors in the correct direction. We bought a 3 foot diameter balloon and filled it with helium which was enough to offset the weight of the PCB. We brought it to the Howe Hall atrium at Iowa State to test fly it before taking it to the project showcase at the end of the semester.",
           "images":[
+			"images/lead-zeppelin/group.jpg",
             "images/lead-zeppelin/flying-1.jpg",
             "images/lead-zeppelin/flying.gif",
             "images/lead-zeppelin/pcb-1.jpg"
@@ -178,7 +186,44 @@ var data = {
       ],
       "images":[
       ]
-    }
+    },
+	{
+		"title":"Essays",
+		"content":[
+			{
+				"title":"Career Objective",
+				"content":"",
+				"images":[
+				]
+			},
+			{
+				"title":"Ethics Essay",
+				"content":"",
+				"images":[
+				]
+			},
+			{
+				"title":"Cumulative Reflection",
+				"content":"",
+				"images":[
+				]
+			},
+			{
+				"title":"General Education Reflection",
+				"content":"",
+				"images":[
+				]
+			}
+		],
+		"images":[
+		]
+	},
+	{
+		"title":"Resume",
+		"content":"",
+		"images":[
+		]
+	}
   ],
   "images":[
   ]
