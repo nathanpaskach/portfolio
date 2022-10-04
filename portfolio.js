@@ -244,11 +244,11 @@ function displayList(list, index)
 			{
 				var im = document.createElement('img');
 				im.src = o;
-				im.style.height = cardHeight + 'px';
+				im.style.height = cardHeight - 20 + 'px';
 				im.onload = function() {
-					if(this.width / this.height > cardWidth / cardHeight)
+					if(this.width / this.height > (cardWidth - 20) / (cardHeight - 20))
 					{
-						im.style.height = cardWidth / this.width * this.height + 'px';
+						im.style.height = (cardWidth - 10) / this.width * this.height + 'px';
 						//im.style.width = cardWidth + 'px';
 					}
 				}

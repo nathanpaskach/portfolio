@@ -178,7 +178,7 @@ var data = {
 		  "content":[
 			{
 			  "title":"Con-sea-erge",
-			  "content":"Senior design project: Fish tank status monitor/auto feeder",
+			  "content":"Senior design project: Fish tank status monitor/auto feeder. Currently in progress.",
 			  "images":[
 				"images/con-sea-erge/stock-fish.jpg"
 			  ]
@@ -191,6 +191,26 @@ var data = {
 				"images/lead-zeppelin/flying-1.jpg",
 				"images/lead-zeppelin/flying.gif",
 				"images/lead-zeppelin/pcb-1.jpg"
+			  ]
+			},
+			{
+			  "title":"Simple Assembly Terminal",
+			  "content":"My CprE 488 final project was a team project with three classmates for which we had to use the ZedBoard (and minimal other hardware) to create some sufficiently complex project. We originally chose to make something similar to an early 80's computer that ran BASIC, however porting BASIC to our system was just too much to do in the time we had. So we switched gears to making it run a very simple Assembly-like language.\n\nWe first created a finite state machine in the FPGA hardware that would be able to decode a PS/2 keyboard and put the characters it recieved in memory. Then we programmed an LCD driver in C and created an implementation of the printf() command so we could easily put text on our 16x2 LCD. From there it was a matter of writing the interpreter that would let the user key in a program, list the program, and run it. This was also written in C.\n\nMy contributions to this project were writing the ASM interpreter, creating the keyboard decoding FSM, building the LCD driving circuit, and implementing printf(). I am very happy with how it turned out and I learned a ton about using FPGAs for embedded system prototyping.",
+			  "images":[
+				"images/asm-terminal/final-build.png",
+				"images/asm-terminal/pmod-lcd.png",
+				"images/asm-terminal/instructions.png"
+			  ]
+			},
+			{
+			  "title":"Astronomy Helper App",
+			  "content":"In my COMS 309 class, I worked with a group of three others to create an Android app in Android Studio. Our app was a sort of \"swiss army knife\" of astronomy information. It would allow you to search for objects in the sky, add them to a list of your favorite objects, and the home page would show a list of your favorite objects that would be visible that night.\n\nI worked on the design and functionality of the UI for this app. This included how the pages flowed from one to another and how information was passed between them. For example, the object information page needed to know which object your tapped on the previous page. All of the object information pages are dynamically generated from large data files included in the app. This is so that all of the critical functionality of the app works without an internet connection. We thought this would be important since astronomers sometimes go to very remote locations which may or may not have service. Things like fetching the Wikipedia page for an object do however require internet.\n\nI continued developing this app by myself after 309 was over since I actually wanted to use it for my own astronomy endeavours. The pictures you see are of the current state of the app. It has been very helpful to be able to see at a glance what objects in the sky I have the best chance of seeing in a given night. It allows me to focus my planning into a few objects rather than spending a bunch of time in a planetarium program looking for things to point my telescope at. I also use the solar system view to know when the best time to photograph certain planets comes around.",
+			  "images":[
+			    "images/simple-sky/home.png",
+			    "images/simple-sky/solar-system.png",
+			    "images/simple-sky/deep-sky.png",
+			    "images/simple-sky/saturn.png",
+			    "images/simple-sky/SimpleSky-Demo-M.gif"
 			  ]
 			}
 		  ],
@@ -212,7 +232,7 @@ var data = {
 			},
 			{
 				"title":"Ethics Essay",
-				"content":"",
+				"content":"Ethical guidelines are essential when directing a group of people towards a common goal. Without definitive codes of behavior, it allows individuals to make decisions that could seriously hurt a company’s reputation. Having set behavioral guidelines keeps employees accountable with their conduct and makes sure all members of the group are on the same page about how to act.\n\nHaving a code of ethics creates an expectation of and defines what behaviors are acceptable and which are unacceptable. For example, when playing Monopoly, there is a defined set of actions that a player may take on each move and how they may interact with other players. These rules have been formulated so that the game can be played well and everyone has a good time. Any deviation from the defined rules is considered cheating and is morally reprehensible. This is the same with a code of ethics applied to a life situation. There is a defined and agreed upon code of behavior put in place to protect the wellbeing of everyone in an organization or workplace, and following this code is the best way to ensure a safe, honest, and welcome work environment. Disobeying this code clearly violates those goals.\n\nA common ethical situation among students right now arises when doing any sort of online exam or quiz. It would be very easy to collaborate with other students and search for answers online. However, that is clearly an unethical thing to do. It is not only dishonest, but it defeats the purpose of the exam entirely. When I am taking an online exam or quiz, I think about the fact that is only meant to be an evaluation of my personal understanding and ability and that preparing for exams is a good way for students to learn. If I were to collaborate with others or look up answers, I would be handing in something that may be 100% correct, but it would not be something that I had worked hard on and could be proud of. In this situation, I know what the right thing to do is. When in the workplace, I would make decisions with the same idea in mind. When working on a project for my employer, I will do my own work so that not only am I staying honest, but I’ll be able to answer questions about it and make any changes easily. In general, I make ethical decisions based upon my own moral code, the stated standards of the school environment or workplace, and what I know I will be proud of in the future.\n\nThe issues discussed during class were a hypothetical big data issue, a Ford Motor Company issue regarding the Pinto, the Volkswagen emissions test scandal, and an Amazon Echo issue from a court case. These ethical dilemmas are of a much larger scale than those I face in my schoolwork and have faced while working jobs at internships, but the principles are exactly the same. All of these situations arise out of dishonesty. The big data issue, Marcus not being honest with John about the sensitivity of the email, the Ford Pinto issue, Ford going on with production despite failing crash tests. Volkswagen literally created a device to be dishonest on emissions tests. Amazon, collecting very private information the Echo users don’t know about. For my case study, the VW issue, one agreed upon idea for an ethical solution to the problem was to immediately own up. Denying there was a problem was where the real ethical issues on the scale of the company came to light.\n\nThe case study I discussed was the VW issue, and the 3 ethical virtues most applicable are integrity, honesty, and responsibility. Integrity because the company was not exercising good and ethical judgement in this scenario, honesty because the \"defeat device\" was designed to be dishonest about real world emissions that their car was producing, and responsibility because upon questioning, VW did not immediately take responsibility for the unethical practice.\n\nIn conclusion, a code of ethics is necessary when you have any group of people striving for a common goal. It is a definitive framework for choosing which actions to take and which not to take. The ethical guidelines, ideally, are formally laid out and have no ambiguity such that when faced with an ethical decision, there is a clear answer.",
 				"images":[
 				]
 			},
