@@ -164,7 +164,7 @@ function displayList(list, index)
 		c.style.fontSize = Math.min(cardHeight * 0.1, cardWidth / longest.length) + 'px';
 		c.style.borderRadius = cardHeight * 0.05 + 'px';
 		cb.style.borderRadius = cardHeight * 0.05 + 'px';
-		if(list['content'][i]['images'].length > 0)
+		if(list['content'][i]['images'].length > 0 && list['content'][i]['images'][0].includes("images"))
 		{
 			cb.style.backgroundImage="url(" + list['content'][i]['images'][0] + ")";
 			cb.style.backgroundSize = 'cover';
@@ -221,7 +221,7 @@ function displayList(list, index)
 			h.textContent = list['title'];
 			h.style.padding = '20px';
 			var b = c.children[0].cloneNode(true);
-			b.textContent = list['content'];
+			b.innerHTML = list['content'];
 			b.style.fontSize = cardHeight * 0.05 + 'px';
 			b.style.padding = '20px';
 			b.style.marginBottom = cardHeight * 0.05 + 'px';
@@ -242,21 +242,28 @@ function displayList(list, index)
 			c.style.backgroundColor = '#000000';
 			list['images'].forEach(o =>
 			{
-				var im = document.createElement('img');
-				im.src = o;
-				im.style.height = cardHeight - 20 + 'px';
-				im.onload = function() {
-					if(this.width / this.height > (cardWidth - 20) / (cardHeight - 20))
-					{
-						im.style.height = (cardWidth - 10) / this.width * this.height + 'px';
-						//im.style.width = cardWidth + 'px';
+				if(o.includes("images"))
+				{
+					var im = document.createElement('img');
+					im.src = o;
+					im.style.height = cardHeight - 20 + 'px';
+					im.onload = function() {
+						if(this.width / this.height > (cardWidth - 20) / (cardHeight - 20))
+						{
+							im.style.height = (cardWidth - 10) / this.width * this.height + 'px';
+							//im.style.width = cardWidth + 'px';
+						}
 					}
+					if(o != list['images'][list['images'].length - 1])
+						im.style.paddingRight = '10px';
+					if(o != list['images'][0])
+						im.style.paddingLeft = '10px';
+					c.appendChild(im);
 				}
-				if(o != list['images'][list['images'].length - 1])
-					im.style.paddingRight = '10px';
-				if(o != list['images'][0])
-					im.style.paddingLeft = '10px';
-				c.appendChild(im);
+				else
+				{
+					c.innerHTML = o;
+				}
 			});
 			c.scrollLeft = 0;
 			currentScroll = 0;

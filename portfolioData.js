@@ -5,7 +5,11 @@ var data = {
 			"title":"About Me",
 			"content":"My name is Nathan Paskach, and this is some placeholder text.",
 			"images":[
-				
+				"images/about-me/vermeer.jpg",
+				"images/about-me/go-kart.jpg",
+				"images/about-me/marching-band.jpg",
+				"images/about-me/time-out-arcade.jpg",
+				"images/about-me/rocket-day.png"
 			]
 		},
 		{
@@ -19,7 +23,7 @@ var data = {
 							"content":[
 								{
 									"title":"Boxman GameBoy",
-									"content":"-STILL IN PROGRESS-\n\nMy brother found two GameBoys at a garage sale for $10 each, so he obviously bought them both, and let me buy one of them from him for $10. Obviously I wanted to write a Boxman for the GameBoy, and maybe even create a physical cartridge for it.\n\nI found a C based GameBoy development kit which allowed me to program a game in C and compile it into a GameBoy game. I test this game using a GameBoy emulator on my computer, but I also bought a GameBoy cartridge that uses a MicroSD card to hold GameBoy games and allow me to pick one from a list to boot up. Occasionally I will put a major revision of my Boxman game on this cartridge to try it on real hardware.",
+									"content":"-STILL IN PROGRESS-\n\nMy brother found two GameBoys at a garage sale for $10 each, so he obviously bought them both, and let me buy one of them from him for $10. I wanted to write a Boxman for the GameBoy, and maybe even create a physical cartridge for it.\n\nI found a C based GameBoy development kit which allowed me to program a game in C and compile it into a GameBoy game. I test this game using a GameBoy emulator on my computer, but I also bought a GameBoy cartridge that uses a MicroSD card to hold GameBoy games and allow me to pick one from a list to boot up. Occasionally I will put a major revision of my Boxman game on this cartridge to try it on real hardware.",
 									"images":[
 										"images/boxman/gameboy/gameplay.gif",
 										"images/boxman/gameboy/gameplay-1.bmp",
@@ -212,7 +216,7 @@ var data = {
 						}
 					],
 					"images":[
-						
+						"images/programmer-calculator/finished-calculator.jpeg"
 					]
 				},
 				{
@@ -257,24 +261,17 @@ var data = {
 						}
 					],
 					"images":[
-						
+						"images/lead-zeppelin/group.jpg"
 					]
 				}
 			],
 			"images":[
-				
+				"images/basic-computer/logic-board.jpg"
 			]
 		},
 		{
-			"title":"Documents",
+			"title":"Essays",
 			"content":[
-				{
-					"title":"Resume",
-					"content":"",
-					"images":[
-						
-					]
-				},
 				{
 					"title":"Ethics Essay",
 					"content":"Ethical guidelines are essential when directing a group of people towards a common goal. Without definitive codes of behavior, it allows individuals to make decisions that could seriously hurt a company’s reputation. Having set behavioral guidelines keeps employees accountable with their conduct and makes sure all members of the group are on the same page about how to act.\n\nHaving a code of ethics creates an expectation of and defines what behaviors are acceptable and which are unacceptable. For example, when playing Monopoly, there is a defined set of actions that a player may take on each move and how they may interact with other players. These rules have been formulated so that the game can be played well and everyone has a good time. Any deviation from the defined rules is considered cheating and is morally reprehensible. This is the same with a code of ethics applied to a life situation. There is a defined and agreed upon code of behavior put in place to protect the wellbeing of everyone in an organization or workplace, and following this code is the best way to ensure a safe, honest, and welcome work environment. Disobeying this code clearly violates those goals.\n\nA common ethical situation among students right now arises when doing any sort of online exam or quiz. It would be very easy to collaborate with other students and search for answers online. However, that is clearly an unethical thing to do. It is not only dishonest, but it defeats the purpose of the exam entirely. When I am taking an online exam or quiz, I think about the fact that is only meant to be an evaluation of my personal understanding and ability and that preparing for exams is a good way for students to learn. If I were to collaborate with others or look up answers, I would be handing in something that may be 100% correct, but it would not be something that I had worked hard on and could be proud of. In this situation, I know what the right thing to do is. When in the workplace, I would make decisions with the same idea in mind. When working on a project for my employer, I will do my own work so that not only am I staying honest, but I’ll be able to answer questions about it and make any changes easily. In general, I make ethical decisions based upon my own moral code, the stated standards of the school environment or workplace, and what I know I will be proud of in the future.\n\nThe issues discussed during class were a hypothetical big data issue, a Ford Motor Company issue regarding the Pinto, the Volkswagen emissions test scandal, and an Amazon Echo issue from a court case. These ethical dilemmas are of a much larger scale than those I face in my schoolwork and have faced while working jobs at internships, but the principles are exactly the same. All of these situations arise out of dishonesty. The big data issue, Marcus not being honest with John about the sensitivity of the email, the Ford Pinto issue, Ford going on with production despite failing crash tests. Volkswagen literally created a device to be dishonest on emissions tests. Amazon, collecting very private information the Echo users don’t know about. For my case study, the VW issue, one agreed upon idea for an ethical solution to the problem was to immediately own up. Denying there was a problem was where the real ethical issues on the scale of the company came to light.\n\nThe case study I discussed was the VW issue, and the 3 ethical virtues most applicable are integrity, honesty, and responsibility. Integrity because the company was not exercising good and ethical judgement in this scenario, honesty because the \"defeat device\" was designed to be dishonest about real world emissions that their car was producing, and responsibility because upon questioning, VW did not immediately take responsibility for the unethical practice.\n\nIn conclusion, a code of ethics is necessary when you have any group of people striving for a common goal. It is a definitive framework for choosing which actions to take and which not to take. The ethical guidelines, ideally, are formally laid out and have no ambiguity such that when faced with an ethical decision, there is a clear answer.",
@@ -298,43 +295,15 @@ var data = {
 				}
 			],
 			"images":[
-				
+				"images/essays-card-bg.png"
 			]
 		},
 		{
-			"title":"Co-ops and Internships",
-			"content":[
-				{
-					"title":"John Deere - Summer 2019",
-					"content":"",
-					"images":[
-						
-					]
-				},
-				{
-					"title":"John Deere - Summer 2020",
-					"content":"",
-					"images":[
-						
-					]
-				},
-				{
-					"title":"Vermeer - Spring and Summer 2021",
-					"content":"",
-					"images":[
-						
-					]
-				},
-				{
-					"title":"Vermeer - Summer 2022",
-					"content":"",
-					"images":[
-						
-					]
-				}
-			],
+			"title":"Resume",
+			"content":"Updated 10-5-2022",
 			"images":[
-				
+				"images/resume-card-bg.png",
+				"<iframe src=\"Nathan-Paskach-Resume.pdf\" width=\"100%\" height=\"100%\">"
 			]
 		}
 	],
