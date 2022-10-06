@@ -115,6 +115,16 @@ function scroll(obj, item)
 	}
 }
 
+function getTextWidth(text, font) {
+    // if given, use cached canvas for better performance
+    // else, create new canvas
+    var canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"));
+    var context = canvas.getContext("2d");
+    context.font = font;
+    var metrics = context.measureText(text);
+    return metrics.width;
+};
+
 function displayList(list, index)
 {
   currentList = list;
@@ -161,7 +171,8 @@ function displayList(list, index)
 				return b.length - a.length;
 			}
 		)[0];
-		c.style.fontSize = Math.min(cardHeight * 0.1, cardWidth / longest.length) + 'px';
+		var longestLength100px = getTextWidth(longest, 'bold 100px Verdana');
+		c.style.fontSize = Math.min(cardHeight * 0.1, (cardWidth - 40) / longestLength100px * 100) + 'px';
 		c.style.borderRadius = cardHeight * 0.05 + 'px';
 		cb.style.borderRadius = cardHeight * 0.05 + 'px';
 		if(list['content'][i]['images'].length > 0 && list['content'][i]['images'][0].includes("images"))
@@ -169,7 +180,7 @@ function displayList(list, index)
 			cb.style.backgroundImage="url(" + list['content'][i]['images'][0] + ")";
 			cb.style.backgroundSize = 'cover';
 			cb.style.backgroundPosition = 'center';
-			c.style.backdropFilter = 'brightness(50%) blur(4px)';
+			c.style.backdropFilter = 'brightness(50%) blur(0.75vmin)';
 		}
 		else
 		{
