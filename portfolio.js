@@ -203,7 +203,7 @@ function displayList(list, index)
   	var len = 2;
 	if(list['images'].length == 0)
 	  len = 1;
-	if(list['images'][0].includes("iframe"))
+	if(list['images'][list['images'].length - 1].includes("iframe"))
 		len = 1;
     var w = container.offsetWidth;
     var h = container.offsetHeight;
@@ -227,7 +227,7 @@ function displayList(list, index)
         var cb = cc.children[0];
 		cb.className = "cardBackgroundNoGrow";
         var c = cc.children[0].children[0];
-		if(i == 0 && !list['images'][0].includes("iframe")) // We're dealing with the textbox
+		if(i == 0 && !list['images'][list['images'].length - 1].includes("iframe")) // We're dealing with the textbox
 		{
 			var h = document.createElement('h2');
 			h.style.fontSize = cardHeight * 0.1 + 'px';
