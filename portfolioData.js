@@ -284,14 +284,14 @@ var data = {
 					"title":"Cumulative Reflection",
 					"content":"",
 					"images":[
-						
+						"<iframe src=\"Nathan-Paskach-Cumulative-Reflection.pdf\" width=\"100%\" height=\"100%\">"
 					]
 				},
 				{
 					"title":"General Education Reflection",
 					"content":"",
 					"images":[
-						
+						"<iframe src=\"Nathan-Paskach-General-Education-Reflection.pdf\" width=\"100%\" height=\"100%\">"
 					]
 				}
 			],
