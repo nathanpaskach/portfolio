@@ -3,7 +3,7 @@ var data = {
 	"content":[
 		{
 			"title":"About Me",
-			"content":"My name is Nathan Paskach. I am in my 5th year at Iowa State studying Computer Engineering. I enjoy building electronics projects, anything to do with model rockets, <a href=\"#Go%20Kart\">go-karts</a>, <a href=\"#Boxman%20Arcade\">arcade</a>, and <a href=\"#Telescope%20Star%20Tracker\">astronomy</a>. I've been a member of the Iowa State marching band for all five of my fall semesters, and when I'm not doing band or school work, I try to keep myself busy with various <a href=\"#Personal%20Projects\">personal projects</a>.\n\nLately I've taken up astrophotography as a hobby, and I've made a few projects centered around getting better photos of planets. I'm slowly working my way to being able to take pictures of galaxies and nebulae, but there are a few more things I need to figure out before that can happen with any kind of reliability.",
+			"content":"My name is Nathan Paskach. I am an embedded hardware engineer at Vermeer Corporation. I enjoy building electronics projects, anything to do with model rockets, <a href=\"#Go%20Kart\">go-karts</a>, <a href=\"#Boxman%20Arcade\">arcade</a>, and <a href=\"#Telescope%20Star%20Tracker\">astronomy</a>. I was a member of the Iowa State marching band for all five of my fall semesters, and when I'm not at work, I try to keep myself busy with various <a href=\"#Personal%20Projects\">personal projects</a>.\n\nLately I've taken up astrophotography as a hobby, and I've made a few projects centered around getting better photos of planets.",
 			"images":[
 				"images/about-me/vermeer.jpg",
 				"images/about-me/go-kart.jpg",
@@ -21,6 +21,16 @@ var data = {
 						{
 							"title":"Boxman",
 							"content":[
+								{
+									"title":"Boxman Keychain",
+									"content":"The smallest version of Boxman yet! Adafruit released an ESP32 dev board with a TFT LCD and three buttons on the back which is everything I need to make a new Boxman game. The board is small enough that it gave me the idea of making a Boxman game that could go on a keychain for playing Boxman on the go. It includes a high score table stored in FLASH, two channels of square wave audio for sound effects and music, and a 200mAh battery for a few hours of gameplay. This project was super fun!",
+									"images":[
+										"images/boxman/keychain/final-product.jpg",
+										"images/boxman/keychain/dev-board.jpg",
+										"images/boxman/keychain/prototype-case.jpg",
+										"images/boxman/keychain/case-assembly.jpg"
+									]
+								},
 								{
 									"title":"Boxman GameBoy",
 									"content":"-STILL IN PROGRESS-\n\nMy brother found two GameBoys at a garage sale for $10 each, so he obviously bought them both, and let me buy one of them from him for $10. I wanted to write a Boxman for the GameBoy, and maybe even create a physical cartridge for it.\n\nI found a C based GameBoy development kit which allowed me to program a game in C and compile it into a GameBoy game. I test this game using a GameBoy emulator on my computer, but I also bought a GameBoy cartridge that uses a MicroSD card to hold GameBoy games and allow me to pick one from a list to boot up. Occasionally I will put a major revision of my Boxman game on this cartridge to try it on real hardware.",
@@ -142,6 +152,14 @@ var data = {
 								"images/go-kart/full-frame.jpg",
 								"images/go-kart/priming.jpg",
 								"images/go-kart/painting.jpg"
+							]
+						},
+						{
+							"title":"Gravity Launch Clone",
+							"content":"<a href=\"https://nathanpaskach.github.io/GravityLaunch\">Play Here</a>\n\nIn April 2020, I wanted to brush up on my Javascript. There was an old Flash game that I'd played in elementary school called Gravity Launch, and I wanted to create a clone of it that had procedurally generated levels instead of just the five pre-made levels in the original. Pictured are my version and the original.",
+							"images":[
+								"images/gravity-launch/hud.jpg",
+								"images/gravity-launch/gravity-launch.png"
 							]
 						},
 						{
