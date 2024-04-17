@@ -138,6 +138,7 @@ function displayList(list, index)
     var aspect = w / h;
     var numRows = Math.min(Math.ceil(Math.sqrt(len * 1.5) / aspect), len);
 	var numCols = Math.ceil(len / numRows);
+	numRows = Math.ceil(len / numCols);
 	if(numCols * numRows >= len + numCols)
 		numRows -= 1;
     var cardWidth = Math.floor(w / Math.ceil(len / numRows));
