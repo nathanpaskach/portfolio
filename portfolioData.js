@@ -143,7 +143,7 @@ var data = {
 							"content":[
 								{
 									"title":"RA4M1Duino",
-									"content":"I designed this Arduino-style development board before I knew that Arduino had just released their Arduino-R4 which uses this exact chip. But, it was a fun excersize and I think mine actually looks better. It's got onboard native USB, all the GPIO of a normal Arduino Uno, plus a CAN transceiver.",
+									"content":"I designed this Arduino-style development board before I knew that Arduino had just released their Arduino-R4 which uses this exact chip. But, it was a fun exercise and I think mine actually looks better. It's got onboard native USB, all the GPIO of a normal Arduino Uno, plus a CAN transceiver.",
 									"images":[
 										"images/RA4M1Duino/RA4M1-Top.jpg",
 										"images/RA4M1Duino/RA4M1-Side.jpg"
