@@ -139,6 +139,31 @@ var data = {
 							]
 						},
 						{
+							"title":"Duinos",
+							"content":[
+								{
+									"title":"RA4M1Duino",
+									"content":"I designed this Arduino-style development board before I knew that Arduino had just released their Arduino-R4 which uses this exact chip. But, it was a fun excersize and I think mine actually looks better. It's got onboard native USB, all the GPIO of a normal Arduino Uno, plus a CAN transceiver.",
+									"images":[
+										"images/RA4M1Duino/RA4M1-Top.jpg",
+										"images/RA4M1Duino/RA4M1-Side.jpg"
+									]
+								},
+								{
+									"title":"RT1060Duino",
+									"content":"This Arduino-style development board is basically a Teensy 4.1, but I wanted to skirt around using the proprietary chip that Teensies use for programming and un-bricking. All the pins map to the same pin number as on a Teensy 4.1, so Teensy libraries can be used on this board and they'll work just fine. It's got onboard native USB, an unpopulated USB host header, all the GPIO of a normal Arduino Uno, plus a CAN transceiver.",
+									"images":[
+										"images/RT1060Duino/1060-Top.jpg",
+										"images/RT1060Duino/1060-Side.jpg",
+										"images/RT1060Duino/1060-Bottom.jpg"
+									]
+								}
+							],
+							"images":[
+								"images/RT1060Duino/1060-Top.jpg"
+							]
+						},
+						{
 							"title":"Go Kart",
 							"content":"For 2 weeks in Summer 2020, my girlfriend Moriah and I built a go kart.\n\nThe frame we made from various steel tubes we picked up from the junkyard that we cut and welded together. The engine is an 8HP Honda engine that we had in our garage that wasn't being used for anything. We built the seat out of 3/16\" plywood, upholstery foam, and faux leather. We bought the wheels, pedals, and steering wheel from an online go kart supply store since we couldn't make those ourselves.\n\nFrom the few times we've driven it around, it has held up very well! With a top speed of just over 40MPH, it is an absolute blast to drive.",
 							"images":[

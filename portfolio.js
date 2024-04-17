@@ -136,7 +136,7 @@ function displayList(list, index)
     var w = container.offsetWidth;
     var h = container.offsetHeight;
     var aspect = w / h;
-    var numRows = Math.min(Math.ceil(Math.sqrt(len) / aspect), len);
+    var numRows = Math.min(Math.ceil(Math.sqrt(len * 1.5) / aspect), len);
 	var numCols = Math.ceil(len / numRows);
 	if(numCols * numRows >= len + numCols)
 		numRows -= 1;
