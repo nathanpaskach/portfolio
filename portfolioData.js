@@ -183,8 +183,15 @@ var data = {
 							"title":"Gravity Launch Clone",
 							"content":"<a href=\"https://nathanpaskach.github.io/GravityLaunch\">Play Here</a>\n\nIn April 2020, I wanted to brush up on my Javascript. There was an old Flash game that I'd played in elementary school called Gravity Launch, and I wanted to create a clone of it that had procedurally generated levels instead of just the five pre-made levels in the original. Pictured are my version and the original.",
 							"images":[
-								"images/gravity-launch/hud.jpg",
+								"images/gravity-launch/hud.JPG",
 								"images/gravity-launch/gravity-launch.png"
+							]
+						},
+						{
+							"title":"Messier Catalog",
+							"content":"<a href=\"https://nathanpaskach.github.io/messier_catalog\">View Here</a>\n\nA collection of all of my astrophotography images of Messier objects.",
+							"images":[
+								"images/messier-catalog/M31.jpg",
 							]
 						},
 						{

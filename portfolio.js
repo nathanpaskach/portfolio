@@ -135,10 +135,10 @@ function displayList(list, index)
   	var len = list['content'].length;
     var w = container.offsetWidth;
     var h = container.offsetHeight;
-    var aspect = w / h;
-    var numRows = Math.min(Math.ceil(Math.sqrt(len * 1.5) / aspect), len);
-	var numCols = Math.ceil(len / numRows);
-	numRows = Math.ceil(len / numCols);
+    var areaPx = w * h;
+	var edgeLen = Math.sqrt(areaPx / len);
+    var numCols = Math.min(Math.floor(w / edgeLen), len);
+	var numRows = Math.ceil(len / numCols);
 	if(numCols * numRows >= len + numCols)
 		numRows -= 1;
     var cardWidth = Math.floor(w / Math.ceil(len / numRows));
