@@ -157,6 +157,14 @@ var data = {
 										"images/RT1060Duino/1060-Side.jpg",
 										"images/RT1060Duino/1060-Bottom.jpg"
 									]
+								},
+								{
+									"title":"STM32F4Duino",
+									"content":"This Duino was a fun challenge. I designed it to be 1/2 scale in all dimensions. The headers are 0.05\" pitch, and the connector is the much smaller USB-C instead of USB-B. It uses the STM32F412 microcontroller which can be programmed with an ST-Link or over USB, though I've had limited success programming it over USB. I'm working on a couple shields for this board. One to give it CAN communication, and one that's a full 6-axis IMU and barometer.",
+									"images":[
+										"images/STM32F4Duino/STM32-Top.jpg",
+										"images/STM32F4Duino/STM32.jpg"
+									]
 								}
 							],
 							"images":[
