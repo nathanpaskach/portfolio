@@ -18,6 +18,28 @@ var data = {
 				{
 					"title":"Personal Projects",
 					"content":[
+                        {
+                            "title":"Astrophotography",
+                            "content":[
+                                {
+                                    "title":"Messier Catalog",
+                                    "content":"<a href=\"https://nathanpaskach.github.io/messier_catalog\">View Here</a>\n\nA collection of all of my astrophotography images of Messier objects.",
+                                    "images":[
+                                        "images/messier-catalog/M31.jpg",
+                                    ]
+                                },
+                                {
+                                    "title":"Caldwell Catalog",
+                                    "content":"<a href=\"https://nathanpaskach.github.io/caldwell_catalog\">View Here</a>\n\nA collection of all of my astrophotography images of Caldwell objects.",
+                                    "images":[
+                                        "images/caldwell-catalog/C7_2-19-2025.jpg",
+                                    ]
+                                }
+                            ],
+                            "images":[
+                                "images/messier-catalog/M31.jpg",
+                            ]
+                        },
 						{
 							"title":"Boxman",
 							"content":[
@@ -193,13 +215,6 @@ var data = {
 							"images":[
 								"images/gravity-launch/hud.JPG",
 								"images/gravity-launch/gravity-launch.png"
-							]
-						},
-						{
-							"title":"Messier Catalog",
-							"content":"<a href=\"https://nathanpaskach.github.io/messier_catalog\">View Here</a>\n\nA collection of all of my astrophotography images of Messier objects.",
-							"images":[
-								"images/messier-catalog/M31.jpg",
 							]
 						},
 						{
